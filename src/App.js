@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import { Button, FormControl, InputLabel, Input } from '@material-ui/core';
-import BorderColorIcon from '@material-ui/icons/BorderColor';
+import EditIcon from '@material-ui/icons/Edit';
 import firebase from 'firebase';
 import ToDo from './Todo';
 import db from './firebase';
@@ -27,12 +27,12 @@ function App() {
     <div className="App">
       <h1>ToDo App📓</h1>
       <FormControl>
-        <InputLabel><BorderColorIcon/> Write a ToDo</InputLabel>
+        <InputLabel><EditIcon/> Write a ToDo</InputLabel>
         <Input value={input} onChange={e => setInput(e.target.value)} />
       </FormControl>
       <Button disabled={!input} type="submit" onClick={addTodo} variant="contained" color="primary">
       Add ToDo
-</Button>
+    </Button>
       <ul>
         {todos.map(t => (
           <ToDo todo={t} />
